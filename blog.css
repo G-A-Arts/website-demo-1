@@ -1,0 +1,77 @@
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+    --color1: #1e2023;
+    --color2: #1a181d;
+    --color3: #3f3947;
+
+    --font1: 'poppins', sans-serif;
+    --font-size: calc(0.3vh + 0.5em + 0.3vw);
+
+    --transiton1: .3s ease;
+
+}
+
+/* ---------- BLOG CSS ---------- */
+
+.blogcontent {
+    width: 100%;
+    height: calc(100vh - 5em);
+    bottom: 0;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.blogmenu {
+    width: 100%;
+    height: 4em;
+    background-color: darkred;
+    display: flex;
+    align-items: center;
+}
+
+.articles {
+    width: 100%;
+    height: calc(100% - 3.5em);
+    overflow-y: scroll;
+}
+
+.article {
+    margin: 1em;
+    height: 25vh;
+
+    background-color: var(--color3);
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.article p {
+    margin: 1em;
+}
+
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em;
+}
+
+@media screen and (max-width: 1279px) {
+    .blogcontent {
+        top: 0;
+        height: calc(100vh - 4em);
+    }
+    
+}
+
+@media screen and (min-width: 1279px) {
+    .blogcontent {
+        flex-direction: column;
+    }
+}
+
+/* Sort items by tag : https://www.youtube.com/watch?v=RKfMtCNx1z0 */

@@ -1,0 +1,28 @@
+/* ---------- NEWS ---------- */
+
+/* ---------- SECTIONS ---------- */
+
+.sections {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+section:nth-child(odd) {
+    background-color: darkslategray;
+}

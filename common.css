@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+    --color1: #1e2023;
+    --color2: #130924;
+    --color3: #3f3947;
+
+    --font1: 'poppins', sans-serif;
+    --font-size: calc(0.3vh + 0.5em + 0.3vw);
+    --menu-font-size: calc(1vh + 1em + 0.5vw);
+
+    --transiton1: .3s ease;
+
+}
+
+/* ---------- BASE ---------- */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: crosshair;
+}
+
+body {
+    background-color: var(--color1);
+    scroll-behavior: smooth;
+    overflow: hidden;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    z-index: 5;
+}
+
+/* ---------- MENU ---------- */
+
+menu {
+    width: 100%;
+    max-height: 100vh;
+    min-height: 4em;
+
+    z-index: 2;
+
+    position: absolute;
+    /*bottom: 0;*/
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* ---------- NAV ---------- */
+
+menu nav {
+    width: 100%;
+    height: 5em;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+
+    /*bottom: 0;*/
+}
+
+menu nav a {
+    padding: 1em;
+    margin: 1em;
+}
+
+.overlay {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    transition: .5s ease;
+    bottom: 0;
+}
+
+.opaque {
+    opacity: 0;
+}
+
+.overlay a {
+    margin: 0.25em;
+    transition: 0.5s ease;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    font-family: 'poppins', sans-serif;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    font-size: var(--menu-font-size);
+    letter-spacing: calc(var(--menu-font-size) / 16);
+
+}
+
+.overlay a:hover {
+    color: white;
+    letter-spacing: calc(var(--font-size) / 4);
+}
+
+/* ---------- BTN ---------- */
+
+.btn {
+    display: flex;
+    width: 2.4em;
+    height: 0.8em;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.btn-line {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+
+.btn-line-short {
+    position: relative;
+    z-index: 1;
+    background: white;
+    width: 50%;
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform .2s;
+}
+
+.btn-line-short:nth-child(1) {
+    align-self: flex-start;
+    transform-origin: right;
+}
+
+.btn-open {
+    transform: rotate(-45deg);
+}
+
+.btn-open .btn-line {
+    transform: scaleX(0.75);
+}
+
+.btn-open .btn-line-short {
+    transform: rotate(-90deg);
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    transform-origin: center;
+    text-decoration: none;
+}
+
+.logo .square {
+    height: 2.5em;
+}
+
+.logo .large {
+    height: 2em;
+}
+
+/* ---------- TEXT ---------- */
+
+.txt {
+    font-family: 'poppins', sans-serif;
+    color: rgb(240, 240, 240);
+    font-size: var(--font-size);
+    font-weight: 400;
+}
+
+.h {
+    color: white;
+    pointer-events: none;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+/* ---------- IMAGES ---------- */
+
+.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit la div tout en conservant le ratio */
+    position: absolute; /* Ajoutez cette ligne */
+    top: 0; /* Ajoutez cette ligne */
+    left: 0; /* Ajoutez cette ligne */
+    z-index: 0; /* Assurez-vous que l'image est derrière le texte */
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* ---------- IMPORTANT ---------- */
+
+.invisible {
+    height: 0px;
+}
+
+@media (max-device-width: 1279px) {
+    menu {
+        bottom: 0;
+        background: rgba(19, 9, 36, 0.60);
+        backdrop-filter: blur(6.9px);
+        -webkit-backdrop-filter: blur(6.9px);
+    }
+
+    menu nav {
+        bottom: 0;
+        height: 4em;
+    }
+
+    .logo .square {
+        display: flex;
+    }
+
+    .logo .large {
+        display: none;
+    }
+
+}
+
+@media (min-device-width: 1280px) {
+    
+    menu {
+        top: 0;
+        flex-direction: column;
+    }
+
+    menu nav {
+        top: 0;
+    }
+
+    .overlay {
+        background: rgba(19, 9, 36, 0.60);
+        backdrop-filter: blur(6.9px);
+        -webkit-backdrop-filter: blur(6.9px);
+    }
+
+    .logo .square {
+        display: none;
+    }
+
+    .logo .large {
+        display: flex;
+    }
+}

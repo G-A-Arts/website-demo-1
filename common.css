@@ -25,6 +25,7 @@
 html {
     scroll-behavior: smooth;
     cursor: crosshair;
+    position: absolute;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
     scroll-behavior: smooth;
     overflow: hidden;
     width: 100%;
+    position: absolute;
 }
 
 ::-webkit-scrollbar {
